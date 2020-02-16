@@ -1,5 +1,7 @@
 {
   "name": "vscode-jsonresume",
+  "displayName": "JSONResume",
+  "publisher": "jsonresume",
   "version": "0.0.0",
   "description": "A VSCode plugin to provide JSONResume validation and code completions",
   "keywords": [
@@ -8,12 +10,29 @@
     "json",
     "javascript"
   ],
+  "categories": [
+    "Snippets"
+  ],
   "license": "MIT",
-  "repository": "https://github.com/evanplaice/vscode-jsonresume.git",
-  "main": "index.js",
+  "repository": "https://github.com/evanplaice/vscode-jsonresume/",
   "scripts": {
     "test": "tape **/*.spec.js | tap-spec"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "engines": {
+    "vscode": "^1.42.0"
+  },
+  "contributes": {
+    "jsonValidation": [
+      {
+        "fileMatch": "*resume.json",
+        "url": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json"
+      },
+      {
+        "fileMatch": "*.resume.json",
+        "url": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json"
+      }
+    ]
+  }
 }
