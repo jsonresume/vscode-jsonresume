@@ -16,7 +16,7 @@
     "Snippets"
   ],
   "license": "MIT",
-  "repository": "https://github.com/evanplaice/vscode-jsonresume/",
+  "repository": "https://github.com/jsonresume/vscode-jsonresume",
   "scripts": {
     "postversion": "git push --follow-tags"
   },
