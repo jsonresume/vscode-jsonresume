@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push:
+    tags:
+    - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Setup
+      uses: actions/setup-node@v1
+    - name: Cache
+      uses: actions/cache@v1
+      id: cache
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.OS }}-npm-cache-
+    - name: Cache Miss
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: |
+        npm ci
+    # - name: Verify
+    #   run: |
+    #     npm run preversion
+    - name: Publish
+      run: |
+        uses: lannonbr/vsce-action@master
+      with:
+        args: "publish -p $VSCE_TOKEN"
+      env:
+        VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
