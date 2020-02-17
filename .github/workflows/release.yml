@@ -13,18 +13,18 @@ jobs:
       uses: actions/checkout@master
     - name: Setup
       uses: actions/setup-node@v1
-    - name: Cache
-      uses: actions/cache@v1
-      id: cache
-      with:
-        path: node_modules
-        key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.OS }}-npm-cache-
-    - name: Cache Miss
-      if: steps.cache.outputs.cache-hit != 'true'
-      run: |
-        npm ci
+    # - name: Cache
+    #   uses: actions/cache@v1
+    #   id: cache
+    #   with:
+    #     path: node_modules
+    #     key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
+    #     restore-keys: |
+    #       ${{ runner.OS }}-npm-cache-
+    # - name: Cache Miss
+    #   if: steps.cache.outputs.cache-hit != 'true'
+    #   run: |
+    #     npm ci
     # - name: Verify
     #   run: |
     #     npm run preversion
