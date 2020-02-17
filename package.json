@@ -3,7 +3,6 @@
   "displayName": "JSONResume",
   "publisher": "jsonresume",
   "version": "0.0.7",
-  "preview": true,
   "description": "JSONResume creation, validation, and code completion in VSCode",
   "keywords": [
     "vscode",
