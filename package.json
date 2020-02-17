@@ -19,7 +19,7 @@
   "license": "MIT",
   "repository": "https://github.com/evanplaice/vscode-jsonresume/",
   "scripts": {
-    "test": "tape **/*.spec.js | tap-spec"
+    "postversion": "git push --follow-tags"
   },
   "dependencies": {},
   "devDependencies": {},
