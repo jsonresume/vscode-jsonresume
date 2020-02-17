@@ -1,5 +1,7 @@
 # JSONResume
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jsonresume/vscode-jsonresume.svg)](https://greenkeeper.io/)
+
 This extension provides Intellisense, and validation support for JSON Resume files.
 
 ## Features
