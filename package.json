@@ -19,8 +19,7 @@
   "license": "MIT",
   "repository": "https://github.com/evanplaice/vscode-jsonresume/",
   "scripts": {
-    "postversion": "git push --follow-tags",
-    "publish": "vsce publish"
+    "postversion": "git push --follow-tags"
   },
   "dependencies": {},
   "devDependencies": {
