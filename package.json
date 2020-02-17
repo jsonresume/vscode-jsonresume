@@ -2,7 +2,7 @@
   "name": "vscode-jsonresume",
   "displayName": "JSONResume",
   "publisher": "jsonresume",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "JSONResume creation, validation, and code completion in VSCode",
   "keywords": [
     "vscode",
