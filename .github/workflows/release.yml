@@ -13,19 +13,9 @@ jobs:
       uses: actions/checkout@master
     - name: Setup
       uses: actions/setup-node@v1
-      with:
-        version: 13.7
-    - name: Cache
-      id: cache
-      uses: actions/cache@v1
-      with:
-        path: node_modules
-        key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.OS }}-npm-cache-
-    - name: Cache Miss
-      if: steps.cache.outputs.cache-hit != 'true'
-      run: npm ci
     - name: Publish
-      run: |
-        npm run publish -- -p ${{ secrets.VSCE_TOKEN }}
+      uses: lannonbr/vsce-action@master
+      with:
+        args: "publish -p $VSCE_TOKEN"
+      env:
+        VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
