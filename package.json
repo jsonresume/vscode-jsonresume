@@ -1,9 +1,10 @@
 {
   "name": "vscode-jsonresume",
-  "displayName": "JSONResume",
+  "displayName": "JSON Resume",
   "publisher": "JSONResume",
+  "license": "MIT",
   "version": "0.1.2",
-  "description": "JSONResume creation, validation, and code completion in VSCode",
+  "description": "JSON Resume creation, validation, and code completion in VSCode",
   "keywords": [
     "vscode",
     "vscode-extension",
@@ -15,12 +16,13 @@
   "categories": [
     "Snippets"
   ],
-  "license": "MIT",
-  "repository": "https://github.com/jsonresume/vscode-jsonresume",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsonresume/vscode-jsonresume"
+  },
   "scripts": {
     "postversion": "git push --follow-tags"
   },
-  "dependencies": {},
   "devDependencies": {
     "vsce": "^1.73.0"
   },
@@ -30,7 +32,7 @@
   "contributes": {
     "jsonValidation": [
       {
-        "fileMatch": "*resume.json",
+        "fileMatch": "resume.json",
         "url": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json"
       },
       {
